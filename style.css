@@ -1,0 +1,285 @@
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CORPO */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #f4fbff, #edf7fc);
+  color: #1f2d3d;
+  line-height: 1.7;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 81, 108, 0.60);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  color: white;
+  animation: fadeUp 1.2s ease;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: white;
+  color: #0b6786;
+  padding: 14px 28px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.btn:hover {
+  background: #dff5ff;
+  transform: translateY(-3px);
+}
+
+/* MENU */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 16px 10px;
+  gap: 18px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #0b6786;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #084d64;
+}
+
+/* CONTAINER */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 35px;
+  margin-bottom: 35px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  animation: fadeUp 0.8s ease;
+}
+
+.card h2 {
+  color: #0b6786;
+  font-size: 2rem;
+  margin-bottom: 22px;
+  border-left: 6px solid #79d6f4;
+  padding-left: 14px;
+}
+
+/* SEÇÕES COM IMAGEM */
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.section-grid.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* TEXTO */
+.text p {
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+/* SEÇÃO IA SEM IMAGEM */
+.ia-section {
+  text-align: left;
+}
+
+.full-text {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* IMAGENS */
+.image img,
+.gallery img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+  transition: transform 0.4s ease;
+}
+
+.image img:hover,
+.gallery img:hover {
+  transform: scale(1.02);
+}
+
+/* LISTA */
+.styled-list {
+  margin-top: 18px;
+  padding-left: 20px;
+}
+
+.styled-list li {
+  margin-bottom: 12px;
+}
+
+/* TABELA */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+thead {
+  background: linear-gradient(90deg, #0b6786, #1ba4cf);
+  color: white;
+}
+
+th, td {
+  padding: 16px 18px;
+  text-align: left;
+  border-bottom: 1px solid #e8eef2;
+}
+
+tbody tr:hover {
+  background: #f3fbff;
+}
+
+/* GALERIA */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* RODAPÉ */
+footer {
+  background: #0b6786;
+  color: white;
+  text-align: center;
+  padding: 24px 15px;
+  margin-top: 40px;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-grid,
+  .section-grid.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 90vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar ul {
+    gap: 12px;
+    padding: 14px 8px;
+  }
+
+  .navbar a {
+    font-size: 0.95rem;
+  }
+}
